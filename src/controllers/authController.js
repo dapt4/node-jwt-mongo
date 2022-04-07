@@ -52,7 +52,7 @@ router.get("/me", verifyToken, async (req, res, next) => {
     }
     res.json(user);
   } catch (err) {
-    console.log(err);
+    res.status(500).json({error: err.message})
   }
 });
 
